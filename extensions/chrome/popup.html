@@ -1,0 +1,109 @@
+<!--
+    Copyright 2010 Google Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<style type="text/css">
+body {
+  padding: 0px;
+  margin: 1px;
+  min-width: 320px;
+  overflow: hidden;
+  background-image: -webkit-gradient(radial, 50% 10%, 10, 50% 10%, 400, from(#f1f8eb), to(#FFF));
+}
+
+td {
+  font-family: verdana;
+  font-size: 12px;
+  color: black;
+}
+</style>
+
+<script src="send_logic.js"></script>
+<script>
+function loadHandler() {
+  document.getElementById('msg').innerHTML = chrome.i18n.getMessage('sending_message');
+  document.getElementById('help').innerHTML = chrome.i18n.getMessage('help_message');
+  document.getElementById('signout').innerHTML = chrome.i18n.getMessage('sign_out_message');
+
+  chrome.tabs.getSelected(null, function(tab) {
+    if (tab.url.indexOf('http:') == 0 ||
+        tab.url.indexOf('https:') == 0) {
+      chrome.tabs.executeScript(null, {file: "content_script.js"});
+    } else {
+      document.getElementById('msg').innerHTML = chrome.i18n.getMessage('invalid_scheme_message');
+    }
+  });
+}
+
+function sendToPhoneListener(status) {
+  if (status == STATUS_SUCCESS) {
+    document.getElementById('msg').innerHTML = chrome.i18n.getMessage('sent_message');
+    activateSignOutLink();  
+  } else if (status == STATUS_LOGIN_REQUIRED) {
+    var link = '<a href="#" onclick="chrome.tabs.create({url: \'' + signInUrl + '\'})">' +
+        chrome.i18n.getMessage('sign_in_message') + '</a>';
+    document.getElementById('msg').innerHTML =
+        chrome.i18n.getMessage('sign_in_required_message', link);
+    setSignOutVisibility(false);
+  } else if (status == STATUS_DEVICE_NOT_REGISTERED) {
+    document.getElementById('msg').innerHTML = chrome.i18n.getMessage('device_not_registered_message');
+    activateSignOutLink();
+  } else { 
+    document.getElementById('msg').innerHTML =  
+        chrome.i18n.getMessage('error_sending_message', req.responseText);
+    activateSignOutLink();
+  }
+}
+
+chrome.extension.onConnect.addListener(function(port) {
+  // This will get called by the content script. We go through
+  // these hoops to get the optional text selection.
+  port.onMessage.addListener(function(info) {
+    var msgType = (info.selection && info.selection.length > 0) ? 'selection' : 'page';
+    sendToPhone(info.title, info.url, msgType, info.selection, sendToPhoneListener);
+  });
+});
+
+function activateSignOutLink() {
+  setSignOutVisibility(true);
+  var signOutLink = document.getElementById('signout');
+  signOutLink.style.color = 'blue';
+  signOutLink.onclick = function() {
+    chrome.tabs.create({url: signOutUrl});
+  };
+}
+
+function setSignOutVisibility(visible) {
+  var signOutLink = document.getElementById('signout');
+  signOutLink.style.visibility = visible ? 'visible' : 'hidden';
+  var sep = document.getElementById('sep');
+  sep.style.visibility = visible ? 'visible' : 'hidden';
+}
+
+</script>
+
+<body onload="loadHandler()">
+<table>
+  <tr>
+    <td><img src="icon_48.png" style="margin-right: 4px;"/></td>
+    <td width="100%" valign="middle">
+      <b><div id="msg"></div></b>
+      <p><a id="help" href="#" onclick="chrome.tabs.create({url: 'help.html'})"></a> <span id="sep">|</span>
+      <a id="signout" href="#" style="color: gray;"></a></p>
+    </td>
+    <td valign="top"><a href="#" onclick="window.close()"><img src="popup_close.png" style="margin: 2px;"></a></td>
+  </tr>
+</table> 
+</body>

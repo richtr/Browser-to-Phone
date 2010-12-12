@@ -1,0 +1,29 @@
+The Desktop to Phone project consists of multiple browser plugins, an Android application and an AppEngine server that enables users to send links, maps, youtube videos, phone numbers and clipboard text between their desktop browser and their phone.
+
+This project is originally branched from the 'Chrome to Phone' project (http://code.google.com/p/chrometophone). The reasons for branching this project are:
+
+- Service agnostic Browser-to-Phone and Phone-to-Browser push
+- Add support for additional phones (e.g. iPhone/iPad)
+
+* Using this service *
+
+1. Download the appropraite Browser to Phone Extension (browser-specific):
+
+	Opera: https://addons.opera.com/addons/extensions/details/opera-to-phone
+	Firefox: (coming soon!)
+	Chrome: (coming soon!)
+	Safari: (coming soon!)
+
+2. Install the Browser to Phone application on your Android device (version 2.2+ phones only)
+
+3. Click the button in your browser to get started, log-in to Browser to Phone and start sending and receiving information between your desktop birowser and phone!i
+
+* Technical Details *
+
+This repository contains 4 different head folders:
+
+- android: contains the Android application source and assets
+- appengine: contains the AppEngine server application source and assets
+- extensions: contains the Browser to Phone compatible desktop extensions source and assets
+
+Collaborators welcome. Please fork this project at your own will!
