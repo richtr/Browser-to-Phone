@@ -55,7 +55,7 @@
     <string name="setup_complete_text">
         Set-up complete. Your phone is now connected and ready to receive links from your browser. &lt;br>&lt;br>
         You need to install a browser extension on your computer to send links to your phone.
-        Simply search for "Browser to Phone" within your browser's extensions catalog.
+        Simply search for "Browser to Phone" within your browser\'s extensions catalog.
     </string>
     
     <!-- Message that appears when Browser to Phone has connected [CHAR LIMIT=NONE] -->
@@ -81,7 +81,7 @@
         Browser to Phone lets you easily share links, maps, and currently selected phone numbers and text
         between your computer and your phone. &lt;br>&lt;br>You need to install the 
         browser extension on your computer to send links to your phone.
-        Simply search for "Browser to Phone" within your browser's extensions catalog. 
+        Simply search for "Browser to Phone" within your browser\'s extensions catalog. 
 	&lt;br>&lt;br>There are just 3 simple steps to complete
         the set up on your phone: &lt;br>&lt;br>1. Choose the Google Account to use.&lt;br>
         2. Connect your browser and your phone.&lt;br>3. Set your link action preference.&lt;br>&lt;br>
@@ -95,7 +95,7 @@
         Browser to Phone lets you easily share links, maps, and currently selected phone numbers and text
         between your computer and your phone. &lt;br>&lt;br>You need to install the 
         browser extension on your computer to send links to your phone. 
-        Simply search for "Browser to Phone" within your browser's extensions catalog. 
+        Simply search for "Browser to Phone" within your browser\'s extensions catalog. 
 	&lt;br>&lt;br>Once the browser extension is installed on your computer, you can
         connect your Android phone.&lt;br>&lt;br>You can choose whether links sent to
         your phone are automatically opened by the appropriate application or left as messages
