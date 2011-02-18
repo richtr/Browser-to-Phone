@@ -110,7 +110,7 @@ class C2DMConfigLoader {
             dmConfig.setKey(key);
             // Must be in classpath, before sending. Do not checkin !
             try {
-                InputStream is = this.getClass().getClassLoader().getResourceAsStream("/dataMessagingToken.txt");
+                InputStream is = this.getClass().getClassLoader().getResourceAsStream("dataMessagingToken.txt");
                 if (is != null) {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(is));
                     String token = reader.readLine();
