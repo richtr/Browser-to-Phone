@@ -1,5 +1,5 @@
 <project name="Guestbook" default="datanucleusenhance">
-  <property name="sdk.dir" location="/home/ywen/local/appengine-java-sdk" />
+  <property name="sdk.dir" location="/android-sdk-mac_86" />
 
   <import file="${sdk.dir}/config/user/ant-macros.xml" />
 

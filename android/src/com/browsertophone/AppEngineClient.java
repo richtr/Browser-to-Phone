@@ -48,7 +48,7 @@ import android.util.Log;
 public class AppEngineClient {
     private static final String TAG = "AppEngineClient";
 
-    static final String BASE_URL = "https://browsertophone.appspot.com";
+    static final String BASE_URL = "https://browsetophone.appspot.com";
     private static final String AUTH_URL = BASE_URL + "/_ah/login";
     private static final String AUTH_TOKEN_TYPE = "ah";
 

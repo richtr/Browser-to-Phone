@@ -39,7 +39,7 @@ public class DeviceRegistrar {
     public static final int ERROR_STATUS = 4;
 
     private static final String TAG = "DeviceRegistrar";
-    static final String SENDER_ID = "stp.chrome@gmail.com";
+    static final String SENDER_ID = "rich.tibbett@gmail.com";
 
     private static final String REGISTER_PATH = "/register";
     private static final String UNREGISTER_PATH = "/unregister";
