@@ -1,5 +1,5 @@
 <project name="Guestbook" default="datanucleusenhance">
-  <property name="sdk.dir" location="/android-sdk-mac_86" />
+  <property name="sdk.dir" location="/appengine-java-sdk" />
 
   <import file="${sdk.dir}/config/user/ant-macros.xml" />
 
@@ -38,7 +38,7 @@
           classpathref="project.classpath"
           debug="on" />
       <javac
-          srcdir="pushmessaging"
+          srcdir="c2dm"
           destdir="war/WEB-INF/classes"
           classpathref="project.classpath"
           debug="on" />

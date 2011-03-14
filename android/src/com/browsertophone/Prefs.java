@@ -20,6 +20,6 @@ import android.content.SharedPreferences;
 
 public final class Prefs {
     public static SharedPreferences get(Context context) {
-        return context.getSharedPreferences("CTP_PREFS", 0);
+        return context.getSharedPreferences("BTP_PREFERENCES", 0);
     }
 }

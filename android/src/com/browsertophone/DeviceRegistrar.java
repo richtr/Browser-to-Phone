@@ -48,7 +48,7 @@ public class DeviceRegistrar {
           final String deviceRegistrationID) {
         new Thread(new Runnable() {
             public void run() {
-                Intent updateUIIntent = new Intent("com.google.ctp.UPDATE_UI");
+                Intent updateUIIntent = new Intent("com.browsertophone.btp.UPDATE_UI");
                 try {
                     HttpResponse res = makeRequest(context, deviceRegistrationID, REGISTER_PATH);
                     if (res.getStatusLine().getStatusCode() == 200) {
@@ -80,7 +80,7 @@ public class DeviceRegistrar {
             final String deviceRegistrationID) {
         new Thread(new Runnable() {
             public void run() {
-                Intent updateUIIntent = new Intent("com.google.ctp.UPDATE_UI");
+                Intent updateUIIntent = new Intent("com.browsertophone.btp.UPDATE_UI");
                 try {
                     HttpResponse res = makeRequest(context, deviceRegistrationID, UNREGISTER_PATH);
                     if (res.getStatusLine().getStatusCode() == 200) {

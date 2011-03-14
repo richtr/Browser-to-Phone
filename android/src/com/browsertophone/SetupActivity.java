@@ -42,14 +42,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
-import com.browsertophone.c2dm.C2DMessaging;
+import com.google.android.c2dm.C2DMessaging;
 
 /**
  * Setup activity - takes user through the setup.
  */
 public class SetupActivity extends Activity {
-    public static final String UPDATE_UI_ACTION = "com.google.ctp.UPDATE_UI";
-    public static final String AUTH_PERMISSION_ACTION = "com.google.ctp.AUTH_PERMISSION";
+    public static final String UPDATE_UI_ACTION = "com.browsertophone.btp.UPDATE_UI";
+    public static final String AUTH_PERMISSION_ACTION = "com.browsertophone.btp.AUTH_PERMISSION";
 
     private boolean mPendingAuth = false;
     private int mScreenId = -1;

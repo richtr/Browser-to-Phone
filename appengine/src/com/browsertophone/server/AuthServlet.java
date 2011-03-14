@@ -58,7 +58,7 @@ public class AuthServlet extends HttpServlet {
                     (signIn ? "/signed_in\\.html" : "/signed_out\\.html");  // TODO: Deprecated 04/08/10
             String regExBrowser = "chrome-extension://[a-z]+" +
                     (signIn ? "/help\\.html(#signed_in)?" : "/signed_out\\.html");
-            String regExFirefox = "http://code\\.google\\.com/p/browsertophone/logo\\?" +
+            String regExFirefox = "http://code\\.google\\.com/p/chrometophone/logo\\?" +
                     (signIn ? "login" : "logout");
             if (extRet.matches(regExBrowserOld) || extRet.matches(regExBrowser) ||
                     extRet.matches(regExFirefox)) {

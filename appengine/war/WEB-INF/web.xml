@@ -45,7 +45,7 @@
     <servlet>
 	    <servlet-name>dataMessagingServlet</servlet-name>
 	    <servlet-class>
-	        com.browsertophone.c2dm.server.C2DMRetryServlet
+	        com.google.android.c2dm.server.C2DMRetryServlet
 	    </servlet-class>
     </servlet>
 

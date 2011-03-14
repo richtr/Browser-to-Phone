@@ -26,7 +26,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.browsertophone.c2dm.C2DMBaseReceiver;
+import com.google.android.c2dm.C2DMBaseReceiver;
 
 public class C2DMReceiver extends C2DMBaseReceiver {
     public C2DMReceiver() {
@@ -47,7 +47,7 @@ public class C2DMReceiver extends C2DMBaseReceiver {
 
     @Override
     public void onError(Context context, String errorId) {
-        context.sendBroadcast(new Intent("com.google.ctp.UPDATE_UI"));
+        context.sendBroadcast(new Intent("com.browsertophone.btp.UPDATE_UI"));
     }
 
     @Override
